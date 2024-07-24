@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:33:10 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/18 17:57:26 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/07/23 11:28:14 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ std::string	standardize(std::string str)
 	return (str);
 }
 
-
 void	PhoneBook::ui(void)
 {
 	std::string	str;
@@ -120,9 +119,10 @@ void	PhoneBook::ui(void)
 	std::cout << "|__________|__________|__________|__________|" << std::endl << std::endl;
 }
 
-static int stoi( std::string & s )
+static int stoi(std::string &s)
 {
     int	i;
+	while (i )
     std::istringstream(s) >> i;
     return (i);
 }

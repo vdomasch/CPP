@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/21 15:08:52 by vdomasch          #+#    #+#              #
-#    Updated: 2024/07/24 14:05:57 by vdomasch         ###   ########.fr        #
+#    Created: 2024/07/22 10:34:57 by vdomasch          #+#    #+#              #
+#    Updated: 2024/07/24 14:05:46 by vdomasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME							=	fixed
+NAME							=	usefulfixedpoint
 
 OBJS_DIR						=	.objs
 
@@ -19,7 +19,7 @@ FILES							=	main.cpp				\
 
 HEADERS							=	Fixed.hpp
 
-OBJS							=	$(FILES:%.cpp=$(OBJS_DIR)/%.o)
+OBJS							=		$(FILES:%.cpp=$(OBJS_DIR)/%.o)
 
 CC								=	c++
 
@@ -27,7 +27,7 @@ FLAGS							=	-std=c++98 -Wall -Werror -Wextra
 
 all:							$(OBJS_DIR) $(NAME)
 
-$(OBJS_DIR)/%.o:%.cpp			$(HEADERS)
+$(OBJS_DIR)/%.o:				%.cpp $(HEADERS)
 									$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):						$(OBJS_DIR) $(OBJS) $(HEADERS) Makefile

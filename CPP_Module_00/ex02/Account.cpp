@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 12:59:04 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/17 16:52:35 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/07/23 17:09:48 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
-
 
 Account::Account(int initial_deposit)
 {
@@ -69,9 +68,8 @@ void	Account::_displayTimestamp(void)
 {
 	char		buffer[19];
 	time_t		t = time(NULL);
-	struct tm	*pTime = localtime(&t);
 	
-	strftime(buffer, 19, "[%Y%m%d_%H%M%S] ", pTime);
+	strftime(buffer, 19, "[%Y%m%d_%H%M%S] ", localtime(&t));
 	std::cout << buffer;
 }
 

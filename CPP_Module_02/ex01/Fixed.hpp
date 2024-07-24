@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 15:13:44 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/24 13:48:53 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/07/23 10:38:06 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/07/24 13:48:56 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ class Fixed
 
 	public:
 	Fixed();
+	Fixed(const int);
+	Fixed(const float);
 	~Fixed();
 	Fixed(const Fixed& fix);		//copy constructor
 	Fixed& operator=(const Fixed& fix);	//copy assignment
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
+	float	toFloat(void) const;
+	int 	toInt(void) const;
 };
 
 #endif

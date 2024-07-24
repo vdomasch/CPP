@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 15:13:41 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/22 10:32:35 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/07/23 10:38:01 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/07/24 13:52:49 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@ Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->number = 0;
+}
+
+Fixed::Fixed(int integer)
+{
+	this->number = integer;
+}
+
+Fixed::Fixed(float float_num)
+{
+	this->number = float_num;
 }
 
 Fixed::~Fixed()
@@ -48,4 +58,14 @@ int	Fixed::getRawBits(void) const
 void	Fixed::setRawBits(int const raw)
 {
 	this->number = raw;
+}
+
+float toFloat(void)
+{
+	
+}
+
+int	toInt(void)
+{
+	
 }
