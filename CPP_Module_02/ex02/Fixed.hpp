@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 10:38:06 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/25 10:31:56 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/07/25 11:21:24 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/07/25 13:26:03 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,40 @@ class Fixed
 	Fixed(const int);
 	Fixed(const float);
 	~Fixed();
+	
 	Fixed(const Fixed& value);		//copy constructor
 	Fixed	&operator=(const Fixed& value);	//copy assignment
+	
 	float	toFloat(void) const;
 	int 	toInt(void) const;
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
+	
+	/*			Comparison Operators		*/
+	bool	operator>(const Fixed& nb);
+	bool	operator<(const Fixed& nb);
+	bool	operator>=(const Fixed& nb);
+	bool	operator<=(const Fixed& nb);
+	bool	operator==(const Fixed& nb);
+	bool	operator!=(const Fixed& nb);
+
+	/*			Arithmetic Operators		*/
+	Fixed	operator+(const Fixed& nb) const;
+	Fixed	operator-(const Fixed& nb) const;
+	Fixed	operator*(const Fixed& nb);
+	Fixed	operator/(const Fixed& nb) const;
+
+	/*			Increment && Decrement		*/
+	Fixed&	operator++();
+	Fixed	operator++(int);
+	Fixed&	operator--();
+	Fixed	operator--(int);
+
+	/*				Min && Max				*/
+	static Fixed		&min(Fixed& nb1, Fixed& nb2);
+	static const Fixed	&min(const Fixed& nb1, const Fixed& nb2);
+	static Fixed		&max(Fixed& nb1, Fixed& nb2);
+	static const Fixed	&max(const Fixed& nb1, const Fixed& nb2);
 };
 
 std::ostream	&operator<<(std::ostream& result, const Fixed& value);

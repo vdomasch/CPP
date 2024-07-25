@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/25 11:21:15 by vdomasch          #+#    #+#              #
-#    Updated: 2024/07/25 17:08:46 by vdomasch         ###   ########.fr        #
+#    Created: 2024/07/25 17:08:03 by vdomasch          #+#    #+#              #
+#    Updated: 2024/07/25 18:35:35 by vdomasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME							=	usefulfixedpoint
+NAME							=	open
 
 OBJS_DIR						=	.objs
 
 FILES							=	main.cpp				\
-									Fixed.cpp
+									ClapTrap.cpp
 
-HEADERS							=	Fixed.hpp
+HEADERS							=	ClapTrap.hpp
 
 OBJS							=	$(FILES:%.cpp=$(OBJS_DIR)/%.o)
 

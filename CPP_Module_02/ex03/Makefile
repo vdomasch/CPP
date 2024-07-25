@@ -5,17 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/25 11:21:15 by vdomasch          #+#    #+#              #
-#    Updated: 2024/07/25 17:08:46 by vdomasch         ###   ########.fr        #
+#    Created: 2024/07/25 14:21:31 by vdomasch          #+#    #+#              #
+#    Updated: 2024/07/25 17:08:40 by vdomasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME							=	usefulfixedpoint
+NAME							=	bsp
 
 OBJS_DIR						=	.objs
 
 FILES							=	main.cpp				\
-									Fixed.cpp
+									Fixed.cpp				\
+									Point.cpp				\
+									bsp.cpp
 
 HEADERS							=	Fixed.hpp
 
