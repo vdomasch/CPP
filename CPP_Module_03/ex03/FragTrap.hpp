@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 17:09:01 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/27 12:02:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/07/27 10:48:08 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/07/27 12:51:20 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_H
+# define FRAGTRAP_H
 
-int main(void)
+# include "ClapTrap.hpp" 
+# include <iostream>
+# include <string>
+
+class FragTrap : virtual public ClapTrap
 {
-	ClapTrap Frank("Frank");
+	private:
 	
-	Frank.attack("Philip");
-	Frank.takeDamage(3);
-	Frank.beRepaired(2);
-	Frank.takeDamage(6);
-	Frank.attack("Kevin");
-	Frank.takeDamage(3);
-	
-	return (0);
-}
+	public:
+	FragTrap(std::string name);
+	~FragTrap();
+	void		highFivesGuys(void);
+};
+
+#endif

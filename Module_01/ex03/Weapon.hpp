@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 17:09:01 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/27 12:02:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/10/15 16:06:47 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/10/15 16:23:03 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main(void)
+# include <iostream>
+
+class Weapon
 {
-	ClapTrap Frank("Frank");
-	
-	Frank.attack("Philip");
-	Frank.takeDamage(3);
-	Frank.beRepaired(2);
-	Frank.takeDamage(6);
-	Frank.attack("Kevin");
-	Frank.takeDamage(3);
-	
-	return (0);
-}
+	private:
+		std::string type;
+		
+	public:
+		Weapon(std::string type);
+		~Weapon();
+		std::string	getType(void) const;
+		void		setType(std::string newType);
+};
+
+#endif

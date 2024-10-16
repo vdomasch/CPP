@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 17:09:01 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/27 12:02:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/10/09 10:37:52 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/10/15 10:53:25 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int main(void)
+# include "Contact.hpp"
+# include <iostream>
+# include <string>
+# include <cstdlib>
+
+class PhoneBook
 {
-	ClapTrap Frank("Frank");
-	
-	Frank.attack("Philip");
-	Frank.takeDamage(3);
-	Frank.beRepaired(2);
-	Frank.takeDamage(6);
-	Frank.attack("Kevin");
-	Frank.takeDamage(3);
-	
-	return (0);
-}
+	public:
+		PhoneBook(void);
+		~PhoneBook(void);
+		void	addContact(void);
+		void	searchContact(void);
+
+	private:
+		Contact	contacts[8];
+		int		nb_contacts;
+};
+
+#endif

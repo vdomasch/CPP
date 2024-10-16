@@ -5,19 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/25 17:08:03 by vdomasch          #+#    #+#              #
-#    Updated: 2024/07/27 11:54:36 by vdomasch         ###   ########.fr        #
+#    Created: 2024/07/27 09:56:48 by vdomasch          #+#    #+#              #
+#    Updated: 2024/07/27 10:28:15 by vdomasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME							=	claptrap
+NAME							=	serena
 
 OBJS_DIR						=	.objs
 
 FILES							=	main.cpp				\
-									ClapTrap.cpp
+									ClapTrap.cpp			\
+									ScavTrap.cpp
 
-HEADERS							=	ClapTrap.hpp
+HEADERS							=	ClapTrap.hpp			\
+									ScavTrap.hpp
 
 OBJS							=	$(FILES:%.cpp=$(OBJS_DIR)/%.o)
 

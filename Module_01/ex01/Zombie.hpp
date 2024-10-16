@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 17:09:01 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/27 12:02:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/10/15 14:56:47 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/10/15 15:11:58 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int main(void)
+#include <iostream>
+
+class Zombie
 {
-	ClapTrap Frank("Frank");
-	
-	Frank.attack("Philip");
-	Frank.takeDamage(3);
-	Frank.beRepaired(2);
-	Frank.takeDamage(6);
-	Frank.attack("Kevin");
-	Frank.takeDamage(3);
-	
-	return (0);
-}
+	private:
+		std::string	name;
+		
+	public:
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+		void	announce(void);
+		void	set_name(std::string name);
+};
+
+Zombie	*newZombie(std::string name);
+Zombie	*zombieHorde(int N, std::string name);
+void	randomChump(std::string name);
+
+#endif

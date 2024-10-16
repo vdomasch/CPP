@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 17:09:01 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/07/27 12:02:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/07/27 09:58:07 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/07/27 12:01:07 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
-int main(void)
+# include "ClapTrap.hpp" 
+
+class ScavTrap : public ClapTrap
 {
-	ClapTrap Frank("Frank");
+	private:
 	
-	Frank.attack("Philip");
-	Frank.takeDamage(3);
-	Frank.beRepaired(2);
-	Frank.takeDamage(6);
-	Frank.attack("Kevin");
-	Frank.takeDamage(3);
-	
-	return (0);
-}
+	public:
+	ScavTrap(std::string name);
+	~ScavTrap();
+	void		guardGate(void);
+};
+
+#endif

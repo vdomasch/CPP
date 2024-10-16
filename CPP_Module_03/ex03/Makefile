@@ -5,25 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/25 17:08:03 by vdomasch          #+#    #+#              #
-#    Updated: 2024/07/27 11:54:36 by vdomasch         ###   ########.fr        #
+#    Created: 2024/07/27 09:56:48 by vdomasch          #+#    #+#              #
+#    Updated: 2024/07/27 15:44:41 by vdomasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME							=	claptrap
+NAME							=	diamond
 
 OBJS_DIR						=	.objs
 
 FILES							=	main.cpp				\
-									ClapTrap.cpp
+									ClapTrap.cpp			\
+									ScavTrap.cpp			\
+									FragTrap.cpp			\
+									DiamondTrap.cpp
 
-HEADERS							=	ClapTrap.hpp
+HEADERS							=	ClapTrap.hpp			\
+									ScavTrap.hpp			\
+									FragTrap.hpp			\
+									DiamondTrap.hpp
 
 OBJS							=	$(FILES:%.cpp=$(OBJS_DIR)/%.o)
 
 CC								=	c++
 
-FLAGS							=	-std=c++98 -Wall -Werror -Wextra
+FLAGS							=	-std=c++98 -Wall -Werror -Wextra -Wshadow
 
 all:							$(OBJS_DIR) $(NAME)
 
