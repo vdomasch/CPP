@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:47:27 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 17:53:32 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:14:34 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,32 @@
 
 Fixed::Fixed(): fixed_point(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int i): fixed_point(i << fractional_bits)
 {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float f): fixed_point(roundf(f * (1 << fractional_bits)))
 {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& other):	fixed_point(other.fixed_point)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator=(const Fixed& other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->fixed_point = other.getRawBits();
@@ -128,7 +128,7 @@ bool	Fixed::operator!=(const Fixed& other)
 const Fixed	Fixed::operator+(const Fixed& other) const
 {
 	Fixed result;
-    result.setRawBits(this->getRawBits() - other.getRawBits());
+    result.setRawBits(this->getRawBits() + other.getRawBits());
     return result;
 	
 	//return (Fixed(this->toFloat() + other.toFloat()));
@@ -139,29 +139,18 @@ const Fixed	Fixed::operator-(const Fixed& other) const
 	Fixed result;
     result.setRawBits(this->getRawBits() - other.getRawBits());
     return result;
-	
+
 	//return (Fixed(this->toFloat() - other.toFloat()));
 }
 
 const Fixed	Fixed::operator*(const Fixed& other) const
 {
-	long int x = (this->fixed_point * other.fixed_point) >> fractional_bits;
-
-	Fixed result;
-	result.setRawBits(x);
-	return (result);
-	//return (Fixed(this->toFloat() * other.toFloat()));
+	 return (Fixed(this->toFloat() * other.toFloat()));
 }
 
 const Fixed	Fixed::operator/(const Fixed& other) const
 {
-	long int x = (this->fixed_point << fractional_bits) / other.fixed_point;
-
-	Fixed result;
-	result.setRawBits(x);
-	return (result);
-	
-	//return (Fixed(this->toFloat() / other.toFloat()));
+	return (Fixed(this->toFloat() * other.toFloat()));
 }
 
 /*						INCREMENT/DECREMENT OPERATOR						  */

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/11/29 13:48:50 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/12/03 12:22:28 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 #include <iostream>
 
-class Fixed
+class AMateria;
+
+class ICharacter
 {
 	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
+		std::string _name;
+		AMateria *_inventory[4];
 
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
+		ICharacter();
+		ICharacter(std::string const & name);
+		virtual	~ICharacter() {}
+		virtual	std::string const & getName() const = 0;
+		virtual void equip(AMateria *m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

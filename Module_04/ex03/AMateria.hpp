@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/12/03 11:23:36 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/12/03 12:19:42 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 #include <iostream>
 
-class Fixed
+class ICharacter;
+
+class AMateria
 {
-	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
+	protected:
+		std::string type;
 
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
+		AMateria();
+		AMateria(std::string const & type);
+		~AMateria();
+		std::string const & getType() const;
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
 
 #endif

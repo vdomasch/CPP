@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/12/03 11:32:59 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/12/03 12:23:55 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-#include <iostream>
+AMateria::AMateria(): type("Random item") {}
 
-class Fixed
+AMateria::AMateria(std::string const & type): type(type) {}
+
+AMateria::~AMateria() {}
+
+std::string const & AMateria::getType() const
 {
-	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
+	return (type);
+}
 
-	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
-};
-
-#endif
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "* uses some " << type << " on " << target.getName() << " *" << std::endl;
+}

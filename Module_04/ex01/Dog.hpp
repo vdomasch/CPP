@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/11/13 14:14:21 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/11/19 12:06:25 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Fixed
+class Dog: public Animal
 {
 	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
+		Brain *brain;
 
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
+		Dog();
+		Dog(const Dog & );
+		Dog& operator=(const Dog & );
+		~Dog();
+		
+		virtual void	makeSound() const;
+		Brain			*getBrain() const;
 };
 
 #endif

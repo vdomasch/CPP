@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/10/18 12:22:13 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/10/18 14:11:46 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class Fixed
+class ScavTrap: public ClapTrap
 {
 	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
+		
 
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
+		ScavTrap();
+		ScavTrap(std::string );
+		ScavTrap(const ScavTrap& );
+		ScavTrap& operator=(const ScavTrap& );
+		~ScavTrap();
+		void guardGate();
+		
 };
 
 #endif

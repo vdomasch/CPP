@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:03:11 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/16 10:10:09 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/10/16 10:43:40 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int main(void)
 {
 	Harl harl;
 	
-	harl.complain("debug");
-	harl.complain("info");
-	harl.complain("warning");
-	harl.complain("error");
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
 	return (0);
 }

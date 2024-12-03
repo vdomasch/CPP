@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/11/14 14:59:18 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/11/19 12:07:10 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 #include <iostream>
 
-class Fixed
+class Brain
 {
 	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
+		std::string	*ideas;
 
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
+		Brain();
+		Brain(const Brain & );
+		Brain& operator=(const Brain & );
+		~Brain();
+
+		std::string	*getIdeas() const;
 };
 
 #endif

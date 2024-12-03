@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:37:55 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/15 11:17:02 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:20:53 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ void	PhoneBook::searchContact(void)
 {
 	int nb;
 	
+	if (this->nb_contacts == 0)
+	{
+		std::cout << "No contact in the PhoneBook" << std::endl;
+		return ;
+	}
 	std::cout << " ___________________________________________" << std::endl;
 	std::cout << "|   Index  |First name|Last  name| Nickname |" << std::endl;
 	std::cout << "|__________|__________|__________|__________|" << std::endl;

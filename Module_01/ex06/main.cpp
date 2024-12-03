@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:12:45 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/16 10:26:10 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/10/16 13:49:22 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 		return (0);	
 	}
 	Harl harl;
-	std::string complains[] = { "debug", "info", "warning", "error" }; 
+	std::string complains[] = { "DEBUG", "INFO", "WARNING", "ERROR" }; 
 	std::string	level(argv[1]);
 	int i;
 	for (i = 0; i < 4; i++)
@@ -30,13 +30,13 @@ int main(int argc, char **argv)
 	}
 	switch (i) {
 		case 0:
-			harl.complain("debug");
+			harl.complain("DEBUG");
 		case 1:
-			harl.complain("info");
+			harl.complain("INFO");
 		case 2:
-			harl.complain("warning");
+			harl.complain("WARNING");
 		case 3:
-			harl.complain("error");
+			harl.complain("ERROR");
 			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

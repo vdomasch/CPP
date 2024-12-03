@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:14:18 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 17:20:04 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:11:43 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int main( void )
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 456789) );
-	Fixed const c( b - Fixed( 2 ) );
-	Fixed const d( c / Fixed( 2 ) );
-	Fixed const e( d + Fixed( 2 ) );
+	Fixed a(Fixed( 5.05f ));
+	Fixed const b(a * Fixed( 6488 ));
+	Fixed const c(b - Fixed( 2 ));
+	Fixed const d(c / Fixed( 4 ));
+	Fixed const e(d + Fixed( 2 ));
 
 	std::cout << "a: " << a << std::endl;
-	std::cout << "++a: " << std::endl << ++a << std::endl;
+	std::cout << "++a: " << ++a << std::endl;
 	std::cout << "a: " << a << std::endl;
-	std::cout << "a++: " << std::endl << a++ << std::endl;
+	std::cout << "a++: " << a++ << std::endl;
 	std::cout << "a: " << a << std::endl;
 
 	std::cout << "b: " << b << std::endl;

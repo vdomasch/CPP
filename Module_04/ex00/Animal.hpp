@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/11/13 12:05:38 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/11/14 14:12:38 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-#include <iostream>
+# include <iostream>
 
-class Fixed
+class Animal
 {
-	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
+	protected:
+		std::string type;
 
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
+		Animal();
+		Animal(std::string type);
+		Animal(const Animal & );
+		Animal& operator=(const Animal & );
+		virtual ~Animal();
+		
+		std::string		getType() const;
+		virtual void	makeSound() const;
 };
 
 #endif

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/11/14 14:08:35 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/11/14 14:13:23 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
 
-#include <iostream>
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-class Fixed
+# include "WrongAnimal.hpp"
+
+class WrongCat: public WrongAnimal
 {
-	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
-
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
+		WrongCat();
+		WrongCat(const WrongCat &);
+		WrongCat& operator=(const WrongCat &);
+		~WrongCat();
+
+		void	makeSound() const;
 };
 
 #endif

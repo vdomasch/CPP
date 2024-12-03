@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/10/18 10:23:27 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/10/18 10:34:32 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "ClapTrap.hpp"
 
-#include <iostream>
-
-class Fixed
+int	main(void)
 {
-	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
+	ClapTrap Clap("Clap");
 
-	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
-};
-
-#endif
+	Clap.attack("Trap");
+	Clap.takeDamage(5);
+	Clap.beRepaired(2);
+	Clap.takeDamage(8);
+	Clap.takeDamage(8);
+	Clap.attack("Trap");
+	Clap.beRepaired(2);
+}

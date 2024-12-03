@@ -5,29 +5,39 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/09 10:29:01 by vdomasch          #+#    #+#              #
-#    Updated: 2024/11/13 12:04:41 by vdomasch         ###   ########.fr        #
+#    Created: 2024/10/18 09:52:04 by vdomasch          #+#    #+#              #
+#    Updated: 2024/11/18 12:04:48 by vdomasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= megaphone
+NAME			= brain
 
-SRC				= megaphone.cpp
+SRC				= main.cpp			\
+				Animal.cpp			\
+				Cat.cpp				\
+				Dog.cpp				\
+				Brain.cpp
+
+HEADER			= Animal.hpp		\
+				Cat.hpp				\
+				Dog.hpp				\
+				Brain.hpp
 
 OBJS_DIR		= .objs/
 
 OBJS			= $(SRC:%.cpp=$(OBJS_DIR)%.o)
 
-CPP				= c++
+CPP				= c++ 
 
 CPPFLAGS		= -std=c++98 -Wall -Wextra -Werror
 
 all: 			$(OBJS_DIR) $(NAME)
 
-$(OBJS_DIR)%.o : %.cpp Makefile
+
+$(OBJS_DIR)%.o : %.cpp $(HEADER) Makefile
 					$(CPP) $(CPPFLAGS) -c $< -o $@
 
-$(NAME): 		$(OBJS) Makefile
+$(NAME): 		$(OBJS) $(HEADER) Makefile
 					$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJS_DIR):

@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 11:25:04 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:11:31 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ class Fixed
 		Fixed(const int );
 		Fixed(const float );
 		Fixed(const Fixed& );
-		~Fixed();
 		Fixed&	operator=(const Fixed& );
+		~Fixed();
+		
 		int		getRawBits(void) const;
 		void	setRawBits(int const );
 		float	toFloat(void) const;

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:34:59 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/17 18:15:29 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/12/03 11:49:07 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/12/03 12:27:58 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-#include <iostream>
+#include "AMateria.hpp"
 
-class Fixed
+class Cure: public AMateria
 {
-	private:
-		int					fixed_point;
-		static const int	fractional_bits = 8;
-
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& );
-		int		getRawBits(void) const;
-		void	setRawBits(int const );
+		Cure();
+		Cure(Cure const & src);
+		~Cure();
+
+		Cure & operator=(Cure const & rhs);
+
+		Cure* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif
