@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*   Character.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#include "Character.hpp"
 #include "AMateria.hpp"
 
-ICharacter::ICharacter(): _name("Random") {}
+Character::Character(): _name("Random") {}
 
-ICharacter::ICharacter(std::string const & name): _name(name) {}
+Character::Character(std::string const & name): _name(name) {}
 
-ICharacter::ICharacter(ICharacter const & src): _name(src._name) {}
+Character::Character(Character const & src): _name(src._name) {}
 
-ICharacter::~ICharacter() {}
+Character::~Character() {}
 
-ICharacter & ICharacter::operator=(ICharacter const & rhs)
+Character & Character::operator=(Character const & rhs)
 {
 	if (this != &rhs)
 	{
@@ -30,12 +30,12 @@ ICharacter & ICharacter::operator=(ICharacter const & rhs)
 	return (*this);
 }
 
-std::string const & ICharacter::getName() const
+std::string const & Character::getName() const
 {
 	return (_name);
 }
 
-void ICharacter::equip(AMateria *m)
+void Character::equip(AMateria *m)
 {
 	int i = 0;
 
@@ -57,14 +57,8 @@ void ICharacter::equip(AMateria *m)
 		std::cout << "Inventory is full" << std::endl;
 }
 
-void ICharacter::unequip(int idx)
+void Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
 		_inventory[idx] = NULL;
-}
-
-void ICharacter::use(int idx, ICharacter& target)
-{
-	if (idx >= 0 && idx < 4 && _inventory[idx] != NULL)
-		std::cout << "* " << _name << " uses some " << _inventory[idx]->getType() << " on " << target.getName() << " *" << std::endl;
 }

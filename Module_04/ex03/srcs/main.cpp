@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 16:06:47 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/12/04 13:06:42 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/12/05 15:02:14 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/12/05 15:05:03 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include <stdio.h>
+#include "AMateria.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
 
-# include <iostream>
-
-class Weapon
+int main()
 {
-	private:
-		std::string type;
-		
-	public:
-		Weapon(std::string type);
-		~Weapon();
-		const std::string	getType(void) const;
-		void		setType(std::string newType);
-};
-
-#endif
+	return 0;
+}

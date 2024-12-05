@@ -6,27 +6,29 @@
 #    By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/18 09:52:04 by vdomasch          #+#    #+#              #
-#    Updated: 2024/12/05 14:50:45 by vdomasch         ###   ########.fr        #
+#    Updated: 2024/12/05 15:02:59 by vdomasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= polymorphism
+NAME			= Materia
 
 SRC_DIR		= srcs/
 HEADER_DIR	= headers/
 
 SRC				= $(SRC_DIR)main.cpp			\
-				$(SRC_DIR)Animal.cpp			\
-				$(SRC_DIR)Cat.cpp				\
-				$(SRC_DIR)Dog.cpp				\
-				$(SRC_DIR)WrongAnimal.cpp		\
-				$(SRC_DIR)WrongCat.cpp
+				$(SRC_DIR)AMateria.cpp			\
+				$(SRC_DIR)Character.cpp			\
+				$(SRC_DIR)Cure.cpp				\
+				$(SRC_DIR)Ice.cpp				\
+				$(SRC_DIR)MateriaSource.cpp
 
-HEADER			= $(HEADER_DIR)Animal.hpp		\
-				$(HEADER_DIR)Cat.hpp				\
-				$(HEADER_DIR)Dog.hpp				\
-				$(HEADER_DIR)WrongAnimal.hpp		\
-				$(HEADER_DIR)WrongCat.hpp
+HEADER			= $(HEADER_DIR)AMateria.hpp		\
+				$(HEADER_DIR)Character.hpp		\
+				$(HEADER_DIR)Cure.hpp			\
+				$(HEADER_DIR)Ice.hpp			\
+				$(HEADER_DIR)ICharacter.hpp		\
+				$(HEADER_DIR)IMateriaSource.hpp	\
+				$(HEADER_DIR)MateriaSource.hpp
 
 OBJS_DIR		= .objs/
 

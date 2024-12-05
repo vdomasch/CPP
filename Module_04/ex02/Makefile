@@ -6,35 +6,37 @@
 #    By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/18 09:52:04 by vdomasch          #+#    #+#              #
-#    Updated: 2024/11/18 12:04:48 by vdomasch         ###   ########.fr        #
+#    Updated: 2024/12/05 15:02:49 by vdomasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= brain
 
-SRC				= main.cpp			\
-				Animal.cpp			\
-				Cat.cpp				\
-				Dog.cpp				\
-				Brain.cpp
+SRC_DIR		= srcs/
+HEADER_DIR	= headers/
 
-HEADER			= Animal.hpp		\
-				Cat.hpp				\
-				Dog.hpp				\
-				Brain.hpp
+SRC				= $(SRC_DIR)main.cpp			\
+				$(SRC_DIR)Animal.cpp			\
+				$(SRC_DIR)Cat.cpp				\
+				$(SRC_DIR)Dog.cpp				\
+				$(SRC_DIR)Brain.cpp
+
+HEADER			= $(HEADER_DIR)Animal.hpp		\
+				$(HEADER_DIR)Cat.hpp			\
+				$(HEADER_DIR)Dog.hpp			\
+				$(HEADER_DIR)Brain.hpp
 
 OBJS_DIR		= .objs/
 
-OBJS			= $(SRC:%.cpp=$(OBJS_DIR)%.o)
+OBJS			= $(SRC:$(SRC_DIR)%.cpp=$(OBJS_DIR)%.o)
 
 CPP				= c++ 
 
-CPPFLAGS		= -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS		= -std=c++98 -Wall -Wextra -Werror -I$(HEADER_DIR)
 
 all: 			$(OBJS_DIR) $(NAME)
 
-
-$(OBJS_DIR)%.o : %.cpp $(HEADER) Makefile
+$(OBJS_DIR)%.o : $(SRC_DIR)%.cpp $(HEADER) Makefile
 					$(CPP) $(CPPFLAGS) -c $< -o $@
 
 $(NAME): 		$(OBJS) $(HEADER) Makefile

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 16:06:47 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/12/04 13:06:42 by vdomasch         ###   ########.fr       */
+/*   Created: 2024/12/04 11:48:23 by vdomasch          #+#    #+#             */
+/*   Updated: 2024/12/05 15:05:29 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+# include "ICharacter.hpp"
 
-# include <iostream>
-
-class Weapon
+class Character: public ICharacter
 {
 	private:
-		std::string type;
-		
+		std::string _name;
+		AMateria *_inventory[4];
 	public:
-		Weapon(std::string type);
-		~Weapon();
-		const std::string	getType(void) const;
-		void		setType(std::string newType);
+		Character();
+		Character(std::string const & name);
+		Character(Character const & src);
+		~Character();
+		Character & operator=(Character const & rhs);
+		std::string const & getName() const;
+		void equip(AMateria *m);
+		void unequip(int idx);
 };
 
 #endif

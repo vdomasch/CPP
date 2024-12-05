@@ -6,7 +6,7 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:01:23 by vdomasch          #+#    #+#             */
-/*   Updated: 2024/10/15 16:43:55 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/12/04 13:06:37 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Weapon::~Weapon()
 	std::cout << "The weapon " << this->type << " has been broken." << std::endl;
 }
 
-std::string	Weapon::getType(void) const
+const std::string	Weapon::getType(void) const
 {
 	return (this->type);
 }
